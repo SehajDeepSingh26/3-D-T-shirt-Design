@@ -37,7 +37,7 @@ const Home = () => {
 
                         <CustomButton
                             type = "filled"
-                            title = "Customize it"
+                            title = "Design"
                             handleClick = {() => state.intro = false}   //TODO --> After clicking this btn, we will shift to   
                                                                         //TODO     Customizer page.
                             customStyles = "w-fit px-4 py-2.5 font-bold text-sm"

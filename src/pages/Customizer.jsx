@@ -19,7 +19,7 @@ const Customizer = () => {
 
     const [file, setFile] = useState('');
 
-    const [, setPrompt] = useState(''); 
+    const [prompt, setPrompt] = useState(''); 
     const [generatingImg, setGeneratingImg] = useState(false); 
 
             //^ this will tell which custom tab we are changing -> color, filePicker or AI genertation prompt.
@@ -178,13 +178,13 @@ const Customizer = () => {
                     >    
                         <CustomButton 
                           type="filled"
-                          title="Go Back"
+                          title="Home"
                           customStyles="w-fit px-4 py-2.5 font-bold text-sm"
                           handleClick={() => state.intro = true}
                         />{" "}
                         <DownloadButton 
                           type="filled"
-                          title="Go Back"
+                          title="Download"
                           handleClick={captureCanvasAndDownload}
                           customStyles="w-fit px-4 py-2.5 font-bold text-sm"
                         />{" "}

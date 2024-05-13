@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSnapshot } from 'valtio'
 
@@ -28,7 +28,7 @@ const Home = () => {
                 <motion.div className='home-content' {...headContainerAnimation}>
                     <motion.div {...headTextAnimation}>
                         <h1 className='head-text'>
-                            LET'S <br className="x1:block hidden" /> DO IT.
+                            LET&apos;S <br className="x1:block hidden" /> DO IT.
                         </h1>
                     </motion.div>
                     <motion.div {...headContentAnimation} className='flex flex-col gap-5'>

@@ -1,15 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import {useState} from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSnapshot } from 'valtio';
 
-import config from '../config/config';  // to connect to backend url
 import state from '../store';
-import {download} from '../assets';
-import {downloadCanvasToImage, reader} from '../config/helpers'
+import html2canvas from "html2canvas";
+import {reader} from '../config/helpers'
 import {EditorTabs, FilterTabs, DecalTypes} from '../config/constants';
 import {fadeAnimation, slideAnimation} from '../config/motion';
 
-import {  ColorPicker, FilePicker, Tab, CustomButton } from '../components';
+import {  ColorPicker, FilePicker, Tab, CustomButton, DownloadButton, } from '../components';
 
 
 const Customizer = () => {
@@ -20,7 +19,7 @@ const Customizer = () => {
 
     const [file, setFile] = useState('');
 
-    const [prompt, setPrompt] = useState(''); 
+    const [, setPrompt] = useState(''); 
     const [generatingImg, setGeneratingImg] = useState(false); 
 
             //^ this will tell which custom tab we are changing -> color, filePicker or AI genertation prompt.
@@ -101,6 +100,7 @@ const Customizer = () => {
                 break;
             case "stylishShirt":
                 state.isFullTexture = !activefilterTab[tabName]; //^to toggle Texture  btn on/off
+                break;
             default:
                 state.isLogoTexture = true;
                 state.isFullTexture = false;    //^default values as set in .store/index.js file
@@ -127,6 +127,26 @@ const Customizer = () => {
 
             })
     }
+
+    // Function to capture the canvas and initiate download
+  const captureCanvasAndDownload = () => {
+    const canvasElement = document.getElementById("your-canvas-id");
+
+    if (!canvasElement) {
+      console.error("Canvas element not found.");
+      return;
+    }
+
+    // Use html2canvas to capture the canvas content as an image
+    html2canvas(canvasElement).then((canvas) => {
+      // Convert the captured canvas to a data URL and initiate the download
+      const image = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.download = "3D_Model_Image.png";
+      link.href = image;
+      link.click();
+    });
+  };
 
     return (
         <AnimatePresence>
@@ -159,9 +179,15 @@ const Customizer = () => {
                         <CustomButton 
                           type="filled"
                           title="Go Back"
-                          handleClick={() => state.intro = true}
                           customStyles="w-fit px-4 py-2.5 font-bold text-sm"
-                        />
+                          handleClick={() => state.intro = true}
+                        />{" "}
+                        <DownloadButton 
+                          type="filled"
+                          title="Go Back"
+                          handleClick={captureCanvasAndDownload}
+                          customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+                        />{" "}
                     </motion.div>
                     
 

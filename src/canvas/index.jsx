@@ -11,6 +11,7 @@ const CanvasModel = () => {
   return (
     <Canvas
       shadows
+      id='your-canvas-id'
       camera = {{position:[0,0,0], fov:40}}     //^fov -> field of view
       gl={{ preserveDrawingBuffer: true }} 
       className = "w-full max-w-full h-full transition-all ease-in"

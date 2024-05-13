@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react';
 import state from '../store'
 import { useSnapshot } from 'valtio';
 import {getContrastingColor} from '../config/helpers'
@@ -26,7 +26,7 @@ const CustomButton = ({type, title, customStyles, handleClick}) => {
     style={generateStyle(type)}
     onClick={handleClick}
     >
-      Home
+      Download
     </button>
   )
 }

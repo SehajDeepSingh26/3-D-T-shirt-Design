@@ -2,16 +2,7 @@
 
 Welcome to the 3D T-shirt Design project! This application allows users to design T-shirts with custom logos, textures, and colors using a 3D interface. After designing, users can download or save their T-shirt designs for further use.
 
-## Table of Contents
-
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+Check out the live demo [3D-T-Shirt-Design.vercel.app](https://3-d-t-shirt-design.vercel.app/).
 
 ## Features
 
@@ -21,9 +12,6 @@ Welcome to the 3D T-shirt Design project! This application allows users to desig
 - **3D Preview:** View your T-shirt design in a 3D environment.
 - **Download/Save Design:** Save your designed T-shirt for later use or download it directly.
 
-## Demo
-
-Check out the live demo [here](#).
 
 ## Installation
 

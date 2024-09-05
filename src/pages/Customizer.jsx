@@ -19,9 +19,6 @@ const Customizer = () => {
 
     const [file, setFile] = useState('');
 
-    const [prompt, setPrompt] = useState(''); 
-    const [generatingImg, setGeneratingImg] = useState(false); 
-
             //^ this will tell which custom tab we are changing -> color, filePicker or AI genertation prompt.
     const[activeEditorTab, setActiveEditorTab] = useState("");      
 
